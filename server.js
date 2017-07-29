@@ -41,7 +41,7 @@ app.get('/new/:url', function(req, res){
   var collection = db.collection('sites');
   collection.insert(doc, function(err, data) {
     if (err) throw err;
-    console.log(JSON.stringify(data));
+    res.send(JSON.stringify(data));
     
     })
       db.close();
