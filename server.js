@@ -34,7 +34,7 @@ app.get('/:url', function(req, res){
 app.get('/new/:url', function(req, res){
     var doc={
       original_url : req.params.url,
-      short_url : Math.floor(Math.random()*1000000)
+      short_url : 'https://morning-bayou-65626.herokuapp.com/' + Math.floor(Math.random()*1000000)
     };
     mongo.connect(mongoURL, function(err, db) {
   if (err) throw err;
