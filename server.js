@@ -17,11 +17,11 @@ app.get('/:url', function(req, res){
     
     var sites = db.collection('sites');
     sites.find({
-    short_url: req.params.url 
+    short: req.params.url 
         
     }).toArray(function(err, docs){
         if (err) console.error(err);
-        res.redirect(docs[0].original_url);
+        res.redirect(docs[0].original);
       
     });
     db.close();
